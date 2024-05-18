@@ -2,6 +2,14 @@
 {
     public class Library : ILibrary
     {
+        #region
+        //LSP (Liskov Substitution Principle)
+        //Library can work with any class that implements IBookRepository.
+
+        //DIP (Dependency Inversion Principle):
+        //Library depends on the IBookRepository abstraction, not a concrete implementation, allowing flexibility and easier testing.
+        #endregion
+
         private readonly IBookRepository _bookRepository;
 
         public Library(IBookRepository bookRepository)
